@@ -1,6 +1,7 @@
 {
     "name": "staark/user",
     "version": "1.0.0-dev",
+    "stable": "1.0.2",
     "description": "PHP User Manage System v2",
     "license": "MIT",
     "homepage": "https://github.com/Staark94/",
