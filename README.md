@@ -7,6 +7,8 @@
  - ActiveRecords
  - Validation on register
 
+# Demo
+[Demo Album](https://imgur.com/a/xNNEwBy)
 
 # Usage Utilites
  - Bootstrap v5.2 Framework
