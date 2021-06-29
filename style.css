@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@100&display=swap');
+
+body {
+    background: #bfbfbf;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    background-image: url(https://i.imgur.com/WQfO5Qo.jpg);
+    height: 100vh;
+}
+
+.card-header {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+input.btn {
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card {
+    background-color: #6a8da97a !important;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.card a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.forgot {
+    background-color: #fff;
+    padding: 12px;
+    border: 1px solid #dfdfdf;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.card.forgot {
+    background-color: #fff !important;
+    padding: 12px;
+    border: 1px solid #dfdfdf;
+    color: #000;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card-footer:last-child {
+    border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+    margin: auto -15px -10px;
+}
