@@ -1,4 +1,9 @@
 # User Manage System v2
+[![Latest Stable Version](http://poser.pugx.org/staark/user/v)](https://packagist.org/packages/staark/user)
+[![Total Downloads](http://poser.pugx.org/staark/user/downloads)](https://packagist.org/packages/staark/user)
+[![Latest Unstable Version](http://poser.pugx.org/staark/user/v/unstable)](https://packagist.org/packages/staark/user)
+[![License](http://poser.pugx.org/staark/user/license)](https://packagist.org/packages/staark/user)
+
  ### PHP User System 
  - Login
  - Register
