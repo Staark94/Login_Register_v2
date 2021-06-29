@@ -1,0 +1,7 @@
+{
+    "name": "staark/user",
+    "description": "PHP User Manage System v2",
+    "require": {
+        "php": ">=7.4",
+    }
+}
