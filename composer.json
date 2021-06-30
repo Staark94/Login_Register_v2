@@ -1,6 +1,5 @@
 {
     "name": "staark/user",
-    "version": "v1.0.2-stable",
     "description": "PHP User Manage System v2",
     "license": "MIT",
     "homepage": "https://github.com/Staark94/",
@@ -14,7 +13,9 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
-        "ext-mbstring": "*"
-    }
+        "php": "^7.4|^8.0",
+    },
+    
+    "minimum-stability": "dev",
+	"prefer-stable": true
 }
