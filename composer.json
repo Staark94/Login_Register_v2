@@ -13,7 +13,8 @@
         }
     ],
     "require": {
-        "php": "^7.3|^8.0"
+        "php": "^7.3|^8.0",
+        "composer-runtime-api": "^2.0"
     },
     
     "minimum-stability": "dev",
