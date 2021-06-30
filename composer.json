@@ -2,7 +2,7 @@
     "name": "staark/user",
     "description": "PHP User Manage System v2",
     "license": "MIT",
-    "homepage": "https://github.com/Staark94/",
+    "homepage": "https://github.com/Staark94/Login_Register_v2",
     "type": "library",
     "authors": [
         {
@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^7.3|^8.0"
     },
     
     "minimum-stability": "dev",
