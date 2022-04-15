@@ -3,24 +3,32 @@
 [![Total Downloads](http://poser.pugx.org/staark/user/downloads)](https://packagist.org/packages/staark/user)
 [![Latest Unstable Version](http://poser.pugx.org/staark/user/v/unstable)](https://packagist.org/packages/staark/user)
 [![License](http://poser.pugx.org/staark/user/license)](https://packagist.org/packages/staark/user)
+![Lines of code](https://img.shields.io/tokei/lines/github/Staark94/Login_Register_v2?style=flat-square)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Staark94/Login_Register_v2?style=flat-square)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/Staark94/Login_Register_v2?style=flat-square)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues-raw/Staark94/Login_Register_v2?style=flat-square)
 
- ### PHP User System 
+![](https://i.imgur.com/4MaTPS6.png)
+![](https://i.imgur.com/5P62pzD.png)
+
+# Languages Utilites
+ - PHP (v 7.4)
+ - Bootstrap Framework (v5.2 latest)
+ - PDO (For Connection)
+ - Password Hash (PHP Hash)
+ - PHPMailer (PHP Framework)
+
+ # System Options Avaible
  - Login
  - Register
  - Forgot Password 
  - Models
  - ActiveRecords
  - Validation on register
+ - User password change with email
 
 # Demo
 [Demo Album](https://imgur.com/a/xNNEwBy)
-
-# Usage Utilites
- - Bootstrap v5.2 Framework
- - PHP PDO For Connection
- - Password saved hash
- - User password change with email
- - PHPMailer
 
 # Settings
 `import Model with ' use Staark\Support\Model\User; '`
