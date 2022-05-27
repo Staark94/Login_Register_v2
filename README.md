@@ -16,7 +16,7 @@
  - Bootstrap Framework (v5.2 latest)
  - PDO (For Connection)
  - Password Hash (PHP Hash)
- - PHPMailer (PHP Framework)
+ - PHPMailer (PHP Library)
 
  # System Options Avaible
  - Login
