@@ -46,7 +46,7 @@ class Eloquent implements ActiveRecords
             try {
                 $query->execute();
 
-                if($query->rowCount() > 0) {
+                if($query->rowCount()) {
                     foreach ($query->fetch(\PDO::FETCH_OBJ) as $key => $value) {
                         if($value == "") continue;
 
@@ -87,14 +87,11 @@ class Eloquent implements ActiveRecords
 
             try {
                 //Server settings
-                self::$mail->SMTPDebug = false; // $config['SMTPDebug'] ? SMTP::DEBUG_SERVER : false;
                 self::$mail->isSMTP();
                 self::$mail->Host       = $config['Host'];
                 self::$mail->SMTPAuth   = $config['SMTPAuth'];
-                self::$mail->SMTPSecure = 'ssl';
                 self::$mail->Username   = $config['Username'];
                 self::$mail->Password   = $config['Password'];
-                self::$mail->SMTPSecure = "tls";
                 self::$mail->Port       = $config['Port'];
 
                 self::$mail->setFrom($config['sender'], $config['head']);
@@ -113,9 +110,10 @@ class Eloquent implements ActiveRecords
 
     public function __get(string $name): string
     {
-        if (array_key_exists($name, $this->attributes)) {
+        if (array_key_exists($name, $this->attributes))
             return $this->attributes[$name];
-        }
+
+        return "";
     }
 
     public function load() {

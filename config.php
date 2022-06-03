@@ -34,5 +34,3 @@ $emailConfig = [
 // User Constructor
 use \Staark\Support\Model\User;
 $user = new User();
-
-User::isGuest();

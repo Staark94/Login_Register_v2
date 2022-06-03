@@ -14,6 +14,13 @@ class User extends Eloquent
         parent::__construct();
     }
 
+    public static function guest(): bool {
+        if(!isset($_SESSION['user']['logged']))
+            return false;
+
+        return true;
+    }
+
     public static function isGuest(): bool
     {
         if(!isset($_SESSION['user']['logged'])) {
@@ -76,10 +83,9 @@ class User extends Eloquent
                     $left = $this->time_left($data->expire);
                     $timeLeft = "{$left->hour} hour and {$left->min} minutes left";
 
-                    if($query->rowCount() > 0)
+                    if($query->rowCount())
                         $this->errors[] = "You have an active request for this email, expire at: {$timeLeft}.";
-
-                    if($query->rowCount() === 0)
+                    else
                     {
                         $token = bin2hex(random_bytes(16));
                         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
@@ -116,7 +122,7 @@ class User extends Eloquent
                 $this->errors[] = "Your request to reset password was expire at {$timeLeft}.";
             }
 
-            if($query->rowCount() > 0) {
+            if($query->rowCount()) {
                 if(isset($_POST['reset'])) {
                     if($_POST['confirm'] !== $_POST['password'])
                         $this->errors[] = "Confirm Password should be some at Password";
@@ -165,22 +171,20 @@ class User extends Eloquent
                     if(!$query->rowCount())
                         self::$instance->errors[] = "<b>*</b> User with that email not found.";
 
-                    if($query->rowCount() > 0) {
-                        $userData = $query->fetch(5);
+                    $userData = $query->fetch(5);
 
-                        if(!password_verify(self::$instance->dataStored['password'], $userData->password))
-                            self::$instance->errors[] = "<b>*</b> Password not match, please try again or reset your password.";
+                    if(!password_verify(self::$instance->dataStored['password'], $userData->password))
+                        self::$instance->errors[] = "<b>*</b> Password not match, please try again or reset your password.";
 
-                        if(!self::$instance->errors) {
-                            self::$connection->query("UPDATE `". self::$instance->getTable() ."` SET update_at = CURRENT_TIMESTAMP WHERE id = " . $userData->id);
-                            $_SESSION['user']['id'] = $userData->id;
-                            $_SESSION['user']['logged'] = true;
+                    if(!self::$instance->errors) {
+                        self::$connection->query("UPDATE `". self::$instance->getTable() ."` SET update_at = CURRENT_TIMESTAMP WHERE id = " . $userData->id);
+                        $_SESSION['user']['id'] = $userData->id;
+                        $_SESSION['user']['logged'] = true;
 
-                            self::$connection = null;
+                        self::$connection = null;
 
-                            @header("Location: ./index");
-                            exit(200);
-                        }
+                        @header("Location: ./index");
+                        exit(200);
                     }
                 } catch (\PDOException $e) {
                     echo $e->getMessage();
